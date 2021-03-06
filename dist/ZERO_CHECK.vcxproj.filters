@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="16.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <CustomBuild Include="C:\Program Files\BeefLang\BeefLibs\Zlib\dist\CMakeFiles\fdfae8c2394fb091de251fcd6f89839a\generate.stamp.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="CMake Rules">
+      <UniqueIdentifier>{5EEF2403-958C-3051-A5CE-02BC4735E12E}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

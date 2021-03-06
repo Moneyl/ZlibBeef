@@ -1,0 +1,10 @@
+^C:\PROGRAM FILES\BEEFLANG\BEEFLIBS\ZLIB\DIST\CMAKEFILES\FDFAE8C2394FB091DE251FCD6F89839A\GENERATE.STAMP.RULE
+setlocal
+"C:\Program Files\CMake\bin\cmake.exe" "-SC:/Program Files/BeefLang/BeefLibs/Zlib/dist" "-BC:/Program Files/BeefLang/BeefLibs/Zlib/dist" --check-stamp-list CMakeFiles/generate.stamp.list --vs-solution-file "C:/Program Files/BeefLang/BeefLibs/Zlib/dist/zlib.sln"
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
