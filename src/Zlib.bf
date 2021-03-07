@@ -3,13 +3,6 @@ using System;
 
 namespace Zlib
 {
-	/*[LinkName("stbi_set_flip_vertically_on_load"), CLink]
-	private static extern void stbi_set_flip_vertically_on_load(c_int flag_true_if_should_flip);
-	public static void SetFlipVerticallyOnLoad(bool flag_true_if_should_flip)
-	{
-		stbi_set_flip_vertically_on_load((c_int)flag_true_if_should_flip);
-	}*/
-
 	public static class Zlib
 	{
 		public static readonly char8* VERSION = "1.2.11";
