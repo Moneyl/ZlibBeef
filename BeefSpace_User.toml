@@ -5,7 +5,7 @@ RecentFilesList = ["src\\Zlib.bf", "c:\\Program Files\\BeefLang\\BeefLibs\\corli
 
 [MainWindow]
 X = 852
-Y = -13
+Y = -23
 Width = 1200
 Height = 1024
 ShowKind = "Maximized"
@@ -54,8 +54,8 @@ TabLabel = "Zlib.bf"
 TabWidth = 76.0
 Type = "SourceViewPanel"
 FilePath = "src\\Zlib.bf"
-CursorPos = 3606
-VertPos = 1170.0
+CursorPos = 2181
+VertPos = 900.0
 ProjectName = "Zlib"
 
 [[MainDockingFrame.DockedWidgets.DockedWidgets]]

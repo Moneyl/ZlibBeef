@@ -84,25 +84,25 @@ namespace Zlib
 			public c_ulong Reserved; //Reserved for future use
 		}
 
-		[LinkName("inflateInit_"), CLink]
-		private static extern c_int InflateInitExtern(ZStream* strm, char8* version, c_int streamSize);
+		[Import("zlibstatic.lib"), CLink]
+		private static extern c_int inflateInit_(ZStream* strm, char8* version, c_int streamSize);
 		private static ZlibResult InflateInit(ZStream* strm, char8* version, c_int streamSize)
 		{
-			return (ZlibResult)InflateInitExtern(strm, version, streamSize);
+			return (ZlibResult)inflateInit_(strm, version, streamSize);
 		}
 
-		[LinkName("inflate"), CLink]
-		private static extern c_int InflateExtern(ZStream* strm, c_int flush);
+		[Import("zlibstatic.lib"), CLink]
+		private static extern c_int inflate(ZStream* strm, c_int flush);
 		private static ZlibResult InflateInternal(ZStream* strm, FlushType flush)
 		{
-			return (ZlibResult)InflateExtern(strm, (c_int)flush);
+			return (ZlibResult)inflate(strm, (c_int)flush);
 		}
 
-		[LinkName("inflateEnd"), CLink]
-		private static extern c_int InflateEndExtern(ZStream* strm);
+		[Import("zlibstatic.lib"), CLink]
+		private static extern c_int inflateEnd(ZStream* strm);
 		private static ZlibResult InflateEnd(ZStream* strm)
 		{
-			return (ZlibResult)InflateEndExtern(strm);
+			return (ZlibResult)inflateEnd(strm);
 		}
 
 		//Inflate input buffer into output buffer. User is responsible for allocating input and output buffers before calling and freeing them after use
@@ -141,11 +141,11 @@ namespace Zlib
 
 		public struct DeflateResult
 		{
-			public uint8* Buffer; //Deflate data buffer
+			public uint8[] Buffer; //Deflate data buffer
 			public uint64 BufferSize; //Total size of the buffer
 			public uint64 DataSize; //Size of the compressed data in the buffer, may be smaller than BufferSize
 
-			public this(uint8* buffer, uint64 bufferSize, uint64 dataSize)
+			public this(uint8[] buffer, uint64 bufferSize, uint64 dataSize)
 			{
 				Buffer = buffer;
 				BufferSize = bufferSize;
@@ -153,28 +153,28 @@ namespace Zlib
 			}
 		}
 
-		[LinkName("compressBound"), CLink]
-		private static extern c_ulong CompressBoundExtern(c_ulong sourceLen);
+		[Import("zlibstatic.lib"), CLink]
+		private static extern c_ulong compressBound(c_ulong sourceLen);
 
-		[LinkName("compress2"), CLink]
-		private static extern c_int Compress2External(uint8* dest, c_ulong* destLen, uint8* source, c_ulong sourceLen, c_int level);
+		[Import("zlibstatic.lib"), CLink]
+		private static extern c_int compress2(uint8* dest, c_ulong* destLen, uint8* source, c_ulong sourceLen, c_int level);
 		private static ZlibResult Compress2(uint8* dest, c_ulong* destLen, uint8* source, c_ulong sourceLen, CompressionLevel level)
 		{
-			return (ZlibResult)Compress2External(dest, destLen, source, sourceLen, (c_int)level);
+			return (ZlibResult)compress2(dest, destLen, source, sourceLen, (c_int)level);
 		}
 
 		//Deflate input buffer and return deflated output. User is responsible for allocating input buffer and freeing both input and output buffer
-		public static Result<DeflateResult, ZlibResult> Deflate(Span<uint8> input)
+		public static Result<DeflateResult, ZlibResult> Deflate(Span<uint8> input, CompressionLevel level = .DefaultCompression)
 		{
-			c_ulong deflateUpperBound = CompressBoundExtern((uint32)input.Length);
+			c_ulong deflateUpperBound = compressBound((uint32)input.Length);
 			c_ulong destLen = deflateUpperBound;
 			var dest = new uint8[deflateUpperBound];
 
-			var result = Compress2((uint8*)&dest[0], &destLen, input.Ptr, (uint32)input.Length, .BestSpeed);
+			var result = Compress2((uint8*)&dest[0], &destLen, input.Ptr, (uint32)input.Length, level);
 			if(result != .Ok && result != .StreamEnd)
 				return .Err(result);
 			else
-				return .Ok(.(&dest[0], deflateUpperBound, destLen));
+				return .Ok(.(dest, deflateUpperBound, destLen));
 		}
 	}
 }

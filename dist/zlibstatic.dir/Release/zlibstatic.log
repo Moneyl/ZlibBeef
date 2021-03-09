@@ -1,5 +1,5 @@
-﻿  Building Custom Rule C:/Program Files/BeefLang/BeefLibs/Zlib/dist/CMakeLists.txt
-  Using triplet "x64-windows" from "G:\Tools\vcpkg\installed\x64-windows\"
+﻿  Using triplet "x64-windows" from "G:\Tools\vcpkg\installed\x64-windows\"
+cl : command line warning D9002: ignoring unknown option '/NODEFAULTLIB:LIBCMT'
   adler32.c
   compress.c
   crc32.c
