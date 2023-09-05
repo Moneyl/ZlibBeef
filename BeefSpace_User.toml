@@ -4,11 +4,11 @@ LastPlatform = "Win64"
 RecentFilesList = ["src\\Zlib.bf", "c:\\Program Files\\BeefLang\\BeefLibs\\corlib\\src\\Result.bf"]
 
 [MainWindow]
-X = 852
-Y = -23
-Width = 1200
-Height = 1024
-ShowKind = "Maximized"
+X = 742
+Y = 0
+Width = 1207
+Height = 906
+ShowKind = "ShowMaximized"
 
 [MainDockingFrame]
 Type = "DockingFrame"
@@ -36,7 +36,8 @@ Type = "TabbedView"
 [[MainDockingFrame.DockedWidgets.DockedWidgets.DockedWidgets.Tabs]]
 Active = true
 TabLabel = "Workspace"
-TabWidth = 115.0
+TabWidth = 114.0351
+TabIsPinned = false
 Type = "ProjectPanel"
 
 [[MainDockingFrame.DockedWidgets.DockedWidgets.DockedWidgets]]
@@ -51,10 +52,11 @@ Type = "TabbedView"
 [[MainDockingFrame.DockedWidgets.DockedWidgets.DockedWidgets.Tabs]]
 Active = true
 TabLabel = "Zlib.bf"
-TabWidth = 76.0
+TabWidth = 67.71933
+TabIsPinned = false
 Type = "SourceViewPanel"
 FilePath = "src\\Zlib.bf"
-CursorPos = 2181
+CursorPos = 1157
 VertPos = 900.0
 ProjectName = "Zlib"
 
@@ -72,31 +74,36 @@ Type = "TabbedView"
 
 [[MainDockingFrame.DockedWidgets.DockedWidgets.DockedWidgets.Tabs]]
 TabLabel = "Profile"
-TabWidth = 87.0
+TabWidth = 87.71933
+TabIsPinned = false
 Type = "ProfilePanel"
 
 [[MainDockingFrame.DockedWidgets.DockedWidgets.DockedWidgets.Tabs]]
 TabLabel = "Modules"
-TabWidth = 101.0
+TabWidth = 100.0
+TabIsPinned = false
 Type = "ModulePanel"
 
 [[MainDockingFrame.DockedWidgets.DockedWidgets.DockedWidgets.Tabs]]
 TabLabel = "Memory"
-TabWidth = 99.0
+TabWidth = 98.24566
+TabIsPinned = false
 Type = "MemoryPanel"
 AutoResize = "Auto_Mul8"
 RequestedWidth = 300.0
 
 [[MainDockingFrame.DockedWidgets.DockedWidgets.DockedWidgets.Tabs]]
 TabLabel = "Watch"
-TabWidth = 86.0
+TabWidth = 86.84214
+TabIsPinned = false
 Type = "WatchPanel"
 Columns = [{Width = 200.0}, {Width = 200.0}, {Width = 200.0}]
 
 [[MainDockingFrame.DockedWidgets.DockedWidgets.DockedWidgets.Tabs]]
 Active = true
 TabLabel = "Auto"
-TabWidth = 77.0
+TabWidth = 78.0702
+TabIsPinned = false
 Type = "AutoWatchPanel"
 Columns = [{Width = 200.0}, {Width = 200.0}, {Width = 200.0}]
 
@@ -108,26 +115,34 @@ Type = "TabbedView"
 
 [[MainDockingFrame.DockedWidgets.DockedWidgets.DockedWidgets.Tabs]]
 TabLabel = "Find Results"
-TabWidth = 119.0
+TabWidth = 118.4211
+TabIsPinned = false
 Type = "FindResultsPanel"
 
 [[MainDockingFrame.DockedWidgets.DockedWidgets.DockedWidgets.Tabs]]
 TabLabel = "Threads"
-TabWidth = 97.0
+TabWidth = 95.61407
+TabIsPinned = false
 Type = "ThreadPanel"
 
 [[MainDockingFrame.DockedWidgets.DockedWidgets.DockedWidgets.Tabs]]
 TabLabel = "Call Stack"
-TabWidth = 105.0
+TabWidth = 106.1404
+TabIsPinned = false
 Type = "CallStackPanel"
 
 [[MainDockingFrame.DockedWidgets.DockedWidgets.DockedWidgets.Tabs]]
 TabLabel = "Immediate"
-TabWidth = 111.0
+TabWidth = 113.158
+TabIsPinned = false
 Type = "ImmediatePanel"
 
 [[MainDockingFrame.DockedWidgets.DockedWidgets.DockedWidgets.Tabs]]
 Active = true
 TabLabel = "Output"
-TabWidth = 90.0
+TabWidth = 90.35091
+TabIsPinned = false
 Type = "OutputPanel"
+
+[[BookmarkFolders]]
+Title = ""

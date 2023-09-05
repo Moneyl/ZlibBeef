@@ -62,7 +62,7 @@ namespace Zlib
 		}	
 
 		[CRepr]
-		private struct ZStream
+		public struct ZStream
 		{
 			public c_uchar* NextIn; //Next input byte
 			public c_uint AvailIn; //Number of bytes available at NextIn
@@ -84,23 +84,51 @@ namespace Zlib
 			public c_ulong Reserved; //Reserved for future use
 		}
 
+        [Import("zlibstatic.lib"), CLink]
+        private static extern c_int deflateInit_(ZStream* strm, c_int level, char8* version, c_int stream_size);
+        public static ZlibResult DeflateInit(ZStream* strm, CompressionLevel compressionLevel)
+        {
+            return (ZlibResult)deflateInit_(strm, (c_int)compressionLevel, VERSION, sizeof(ZStream));
+        }
+
+        [Import("zlibstatic.lib"), CLink]
+        private static extern c_ulong deflateBound(ZStream* strm, c_ulong sourceLen);
+        public static c_ulong DeflateBound(ZStream* strm, c_ulong sourceLen)
+        {
+            return deflateBound(strm, sourceLen);
+        }
+
+        [Import("zlibstatic.lib"), CLink]
+        private static extern c_int deflate(ZStream* strm, c_int flush);
+        public static c_int Deflate(ZStream* strm, FlushType flush)
+        {
+            return deflate(strm, (c_int)flush);
+        }
+
+        [Import("zlibstatic.lib"), CLink]
+        private static extern c_int deflateEnd(ZStream* strm);
+        public static c_int DeflateEnd(ZStream* strm)
+        {
+            return deflateEnd(strm);
+        }
+
 		[Import("zlibstatic.lib"), CLink]
 		private static extern c_int inflateInit_(ZStream* strm, char8* version, c_int streamSize);
-		private static ZlibResult InflateInit(ZStream* strm, char8* version, c_int streamSize)
+		public static ZlibResult InflateInit(ZStream* strm, c_int streamSize)
 		{
-			return (ZlibResult)inflateInit_(strm, version, streamSize);
+			return (ZlibResult)inflateInit_(strm, VERSION, streamSize);
 		}
 
 		[Import("zlibstatic.lib"), CLink]
 		private static extern c_int inflate(ZStream* strm, c_int flush);
-		private static ZlibResult InflateInternal(ZStream* strm, FlushType flush)
+		public static ZlibResult InflateInternal(ZStream* strm, FlushType flush)
 		{
 			return (ZlibResult)inflate(strm, (c_int)flush);
 		}
 
 		[Import("zlibstatic.lib"), CLink]
 		private static extern c_int inflateEnd(ZStream* strm);
-		private static ZlibResult InflateEnd(ZStream* strm)
+		public static ZlibResult InflateEnd(ZStream* strm)
 		{
 			return (ZlibResult)inflateEnd(strm);
 		}
@@ -119,7 +147,7 @@ namespace Zlib
 			inflateStream.NextOut = output.Ptr;
 
 			ZlibResult result = .Ok;
-			result = (ZlibResult)InflateInit(&inflateStream, VERSION, sizeof(ZStream));
+			result = (ZlibResult)InflateInit(&inflateStream, sizeof(ZStream));
 			if(result != .Ok)
 				return result;
 
@@ -154,11 +182,11 @@ namespace Zlib
 		}
 
 		[Import("zlibstatic.lib"), CLink]
-		private static extern c_ulong compressBound(c_ulong sourceLen);
+		public static extern c_ulong compressBound(c_ulong sourceLen);
 
 		[Import("zlibstatic.lib"), CLink]
 		private static extern c_int compress2(uint8* dest, c_ulong* destLen, uint8* source, c_ulong sourceLen, c_int level);
-		private static ZlibResult Compress2(uint8* dest, c_ulong* destLen, uint8* source, c_ulong sourceLen, CompressionLevel level)
+		public static ZlibResult Compress2(uint8* dest, c_ulong* destLen, uint8* source, c_ulong sourceLen, CompressionLevel level)
 		{
 			return (ZlibResult)compress2(dest, destLen, source, sourceLen, (c_int)level);
 		}

@@ -1,4 +1,0 @@
-﻿  Building Custom Rule C:/Program Files/BeefLang/BeefLibs/Zlib/dist/CMakeLists.txt
-  Using triplet "x64-windows" from "G:\Tools\vcpkg\installed\x64-windows\"
-  example.c
-  example.vcxproj -> C:\Program Files\BeefLang\BeefLibs\Zlib\dist\Release\example.exe

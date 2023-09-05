@@ -1,5 +1,0 @@
-﻿  Building Custom Rule C:/Program Files/BeefLang/BeefLibs/Zlib/dist/CMakeLists.txt
-  Using triplet "x64-windows" from "G:\Tools\vcpkg\installed\x64-windows\"
-  minigzip.c
-C:\Program Files\BeefLang\BeefLibs\Zlib\dist\test\minigzip.c(503,1): warning C4267: 'initializing': conversion from 'size_t' to 'unsigned int', possible loss of data
-  minigzip.vcxproj -> C:\Program Files\BeefLang\BeefLibs\Zlib\dist\Release\minigzip.exe

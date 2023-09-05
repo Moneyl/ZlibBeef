@@ -1,8 +1,0 @@
-C:/Program Files/BeefLang/BeefLibs/Zlib/dist/CMakeFiles/zlib.dir
-C:/Program Files/BeefLang/BeefLibs/Zlib/dist/CMakeFiles/zlibstatic.dir
-C:/Program Files/BeefLang/BeefLibs/Zlib/dist/CMakeFiles/example.dir
-C:/Program Files/BeefLang/BeefLibs/Zlib/dist/CMakeFiles/minigzip.dir
-C:/Program Files/BeefLang/BeefLibs/Zlib/dist/CMakeFiles/INSTALL.dir
-C:/Program Files/BeefLang/BeefLibs/Zlib/dist/CMakeFiles/RUN_TESTS.dir
-C:/Program Files/BeefLang/BeefLibs/Zlib/dist/CMakeFiles/ALL_BUILD.dir
-C:/Program Files/BeefLang/BeefLibs/Zlib/dist/CMakeFiles/ZERO_CHECK.dir
