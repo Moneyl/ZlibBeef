@@ -5,7 +5,7 @@ namespace Zlib
 {
 	public static class Zlib
 	{
-		public static readonly char8* VERSION = "1.2.11";
+		public static readonly char8* VERSION = "1.2.3";
 		public static readonly uint32 VERNUM = 0x12b0;
 		public static readonly uint32 VER_MAJOR = 1;
 		public static readonly uint32 VER_MINOR = 2;
@@ -132,6 +132,13 @@ namespace Zlib
 		{
 			return (ZlibResult)inflateEnd(strm);
 		}
+
+        [Import("zlibstatic.lib"), CLink]
+        private static extern char8* zlibVersion();
+        public static char8* Version()
+        {
+            return zlibVersion();
+        }
 
 		//Inflate input buffer into output buffer. User is responsible for allocating input and output buffers before calling and freeing them after use
 		public static ZlibResult Inflate(Span<uint8> input, Span<uint8> output)

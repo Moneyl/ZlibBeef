@@ -6,17 +6,17 @@ TargetType = "BeefLib"
 StartupObject = "Zlib.Program"
 
 [Configs.Debug.Win64]
-LibPaths = ["$(ProjectDir)/dist/zlib/Release/zlibstatic.lib"]
-PostBuildCmds = ["CopyToDependents(\"$(ProjectDir)/dist/zlib/Release/*.lib\")"]
+LibPaths = ["$(ProjectDir)/dist/x64/Release/zlibstatic.lib"]
+PostBuildCmds = ["CopyToDependents(\"$(ProjectDir)/dist/x64/Release/*.lib\")"]
 
 [Configs.Release.Win64]
-LibPaths = ["$(ProjectDir)/dist/zlib/Release/zlibstatic.lib"]
-PostBuildCmds = ["CopyToDependents(\"$(ProjectDir)/dist/zlib/Release/*.lib\")"]
+LibPaths = ["$(ProjectDir)/dist/x64/Release/zlibstatic.lib"]
+PostBuildCmds = ["CopyToDependents(\"$(ProjectDir)/dist/x64/Release/*.lib\")"]
 
 [Configs.Paranoid.Win64]
-LibPaths = ["$(ProjectDir)/dist/zlib/Release/zlibstatic.lib"]
-PostBuildCmds = ["CopyToDependents(\"$(ProjectDir)/dist/zlib/Release/*.lib\")"]
+LibPaths = ["$(ProjectDir)/dist/x64/Release/zlibstatic.lib"]
+PostBuildCmds = ["CopyToDependents(\"$(ProjectDir)/dist/x64/Release/*.lib\")"]
 
 [Configs.Test.Win64]
-LibPaths = ["$(ProjectDir)/dist/zlib/Release/zlibstatic.lib"]
-PostBuildCmds = ["CopyToDependents(\"$(ProjectDir)/dist/zlib/Release/*.lib\")"]
+LibPaths = ["$(ProjectDir)/dist/x64/Release/zlibstatic.lib"]
+PostBuildCmds = ["CopyToDependents(\"$(ProjectDir)/dist/x64/Release/*.lib\")"]

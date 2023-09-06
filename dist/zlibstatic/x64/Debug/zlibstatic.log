@@ -1,0 +1,15 @@
+﻿  adler32.c
+  compress.c
+  crc32.c
+  deflate.c
+  gzio.c
+  infback.c
+  inffast.c
+  inflate.c
+  inftrees.c
+  trees.c
+  uncompr.c
+  zutil.c
+  Generating Code...
+  main.cpp
+  zlibstatic.vcxproj -> C:\Users\lukem\source\repos\Nanoforge\Dependencies\RfgTools\Dependencies\ZlibBeef\dist\x64\Debug\zlibstatic.lib
